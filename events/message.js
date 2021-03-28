@@ -28,7 +28,8 @@ client.on('message', async (message) => {
     }
 
     for (check of checks) {
-      const word_found = message_words.some(mw => check.words.some(w => w === mw))
+      const content = " " + message.content.toLowerCase() + " ";
+      const word_found = check.words.some(w => content.includes(" " + w + " "));
       if (word_found) {
         if (check.isReaction) {
           return message.react(check.ans);
@@ -68,7 +69,8 @@ client.on("message", async (message) => {
 
 client.on('message', async (message) => {
 
-  const remove = message.content.startsWith('$' || 'P!') || message.member.id === '716390085896962058';
+  const content = message.content.toLowerCase();
+  const remove = content.startsWith('$') || content.startsWith('p!') || message.member.id === '716390085896962058';
 
   if (remove)
     removeMess(message);

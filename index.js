@@ -28,12 +28,12 @@ for (const f of files) {
 
 //Load events
 const loadEvents = () =>
-	fs
-		.readdirSync(path.join(__dirname, '/events/'))
+	fs.readdirSync(path.join(__dirname, '/events/'))
 		.forEach(file => file.endsWith('.js') && require(`./events/${file}`));
-loadEvents();
+
 
 client.on('ready', () => {
+  loadEvents();
 	client.user.setActivity('you be a degen', { type: 'WATCHING' });
 	console.log(`Logged in as ${client.user.tag}!`);
 });
