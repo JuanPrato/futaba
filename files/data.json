@@ -83,5 +83,16 @@
     "words": ["paolumu"],
     "ans": "a:patlumu:823678237170204713",
     "isReaction": true
+  },
+  {
+    "words": ["xd"],
+    "ans": [
+      "kekw",
+      "lol",
+      "pfft xD",
+      "lmao",
+      "hue hue~"
+    ],
+    "atStart": true
   }
 ]

@@ -14,6 +14,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const path = require('path');
+const db = new (require('@replit/database'))();
 
 client.prefix = '*';
 
@@ -40,4 +41,4 @@ client.on('ready', () => {
 
 client.login(process.env.TOKEN);
 
-module.exports = client;
+module.exports = {client, db};
