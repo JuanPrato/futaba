@@ -76,5 +76,7 @@ client.on('message', async (message) => {
 });
 
 const removeMess = async (message) => {
-  message.delete();
+  setTimeout(() => {
+    message.delete();
+  }, 1000 * 60 * 3)
 }
