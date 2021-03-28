@@ -1,0 +1,87 @@
+[
+  {
+    "words":["no i dont", "no, i dont", "no i don't", "no, i don't","no, i do not", "no i do not"],
+    "ans":["Yes, you do"]
+  },
+  {
+    "words": ["hi", "hiya", "hey", "heya", "hello"],
+    "ans": [
+      "How's it hanging?",
+      "What's up gamer?",
+      "Hai Hai~",
+      "I'm not ready for people yet",
+      "Oh no... people"
+    ]
+  },
+  {
+    "words":["i love you", "ily", "i <3 u", "i ❤️ u", "i ❤️ you"],
+    "ans":[
+      "I-I... ~~love you too~~",
+      "...are you really gonna make me say it?",
+      "ᵢ ₗₒᵥₑ ᵧₒᵤ ₜₒₒ",
+      "Y'know it's hard for me to say it..."
+    ]
+  },
+  {
+    "words":["sad", "depressed", "unhappy", "angry", "miserable", "upset", "kill", "kms", "hate", "pissed", "die", "mad", "alone", "depressing", "cry"],
+    "ans":[
+      "Never forget someone out there loves you",
+      "'You're ok', keep telling yourself that until it becomes true",
+      "You're a breathtaking individual and I love you",
+      "Let it all out",
+      "Chin up, you got this",
+      "Hey! You beautiful bitch, happy thoughts in here",
+      "No more tears, you gotta take care of yourself",
+      "Things will get better."
+    ]
+  },
+  {
+    "words":["cheese", "cheeze"],
+    "ans":["Sometimes, I dream about Cheese"]
+  },
+  {
+    "words":["why don't you work", "work pls", "futaba pls", "why dont you work"],
+    "ans":[
+      "You should've coded me better",
+      "Tell Funky to git gud",
+      "It's not my fault Funky doesn't know how to code",
+      "Sorry! My creator is just shit",
+      "One day I'll be the person you wanted me to be"
+    ]
+  },
+  {
+    "words":["drunkbydaylight", "drunk by daylight"],
+    "ans":["You gotta take it up with the big guy"]
+  },
+  {
+    "words":["shut up", "stop it", "shutup"],
+    "ans": [
+      "Sorry... I'm only doing what I was supposed to.",
+      "I'll try to be better",
+      "I only wanted to help",
+      "Please don't be too mad at me ;w;"
+    ]
+  },
+  {
+    "words": ["dbd", "deadbydaylight"],
+    "ans":  [
+      "Did you mean... Monster Hunter? <a:RiseHype:823697795931963412>",
+      "Monster Hunter* <a:RiseHype:823697795931963412><a:RiseHype:823697795931963412>"
+    ]
+  },
+  {
+    "words": ["hype", "rise", "monster", "hunter", "doggo", "mh", "dance", "rajang", "pickle", "jho", "brachy", "plesioth",     "buggie", "monstie", "kinsect", "cart", "alatreon", "fatalis", "jagras", "wyvern", "clifford"],
+    "ans": "a:RiseHype:823697795931963412",
+    "isReaction": true
+  },
+  {
+    "words": ["dweet", "dwight", "twink", "dwelf"],
+    "ans": ":HyperDweet:786874503258177537",
+    "isReaction": true
+  },
+  {
+    "words": ["paolumu"],
+    "ans": "a:patlumu:823678237170204713",
+    "isReaction": true
+  }
+]
