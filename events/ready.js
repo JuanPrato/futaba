@@ -46,7 +46,7 @@ client.on('ready', async () => {
     const guild = await client.guilds.fetch(b.dataValues.guildid);
     schedualeBirthday(b.dataValues.birthdaydate,
      await guild.members.fetch(b.dataValues.usertonotify),
-     await guild.fetch(b.dataValues.userid))
+     b.dataValues.userid)
   })
 
 
@@ -54,7 +54,7 @@ client.on('ready', async () => {
 
 const schedualeBirthday = async (date, member, birthUser) => {
   cron.schedule(`* * ${date.getDate()} ${date.getMonth()} *`, () => {
-    member.send(`Is the birthday of ${birthUser.displayName}`,
+    member.send(`Is the birthday of ${birthUser}`,
     {
       timezone:'US/Central'
     });

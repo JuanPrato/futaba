@@ -4,7 +4,7 @@ const cron = require('node-cron');
 
 module.exports = {
     name: "rmvbd",
-    alias: ["rv"],
+    alias: ["rb"],
     min_args: 1,
     permission: (member) => (
       member.hasPermission(Discord.Permissions.FLAGS.ADMINISTRATOR)

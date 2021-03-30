@@ -18,12 +18,12 @@ module.exports = {
 
         const date = new Date(1972, Number(dayMonth[1]), Number(dayMonth[0]));
 
-        const user = message.mentions.users.first();
+        const user = args.shift();
 
-        schedualeBirthday(date, message.member);
+        schedualeBirthday(date, message.member, user);
 
         await Birthday.upsert({
-            userid:user.id,
+            userid:user,
             guildid: message.guild.id,
             usertonotify: message.member.id,
             birthdaydate: date
@@ -40,7 +40,7 @@ module.exports = {
 
 const schedualeBirthday = async (date, member, birthUser) => {
   cron.schedule(`* * ${date.getDate()} ${date.getMonth()} *`, () => {
-    member.send(`Is the birthday of ${birthUser.displayName}`,
+    member.send(`Is the birthday of ${birthUser}`,
     {
       timezone:'US/Central'
     });
