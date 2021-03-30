@@ -1,14 +1,20 @@
-const {client, db} = require('../index');
+const {client} = require('../index');
+const RolesToAssing = require('../models/rolesToAssing');
 
 client.on('messageReactionAdd', async (reaction, user) => {
-
-  const messageId = await db.get("roleMessageId");
-  console.log(messageId, "===", reaction.message.id)
-  if ( reaction.message.id === messageId ) {
-    //TODO: add role logic
+  const role = await RolesToAssing.findOne({
+    where: {
+      guildid: reaction.message.guild.id,
+      messageid: reaction.message.id
+    }
+  })
+  if ( role ) {
     await reaction.users.remove(user.id);
   
-    await user.send("On develop");
+    const guild = reaction.message.guild;
+    const member = await guild.members.fetch(user.id);
+    const drole = await guild.roles.fetch(role.dataValues.roleid);
+    await member.roles.add(drole);
   }
 
 });

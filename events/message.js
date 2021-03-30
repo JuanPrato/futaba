@@ -1,9 +1,9 @@
 const {client} = require('../index');
 const fs = require("fs");
 const path = require("path");
+const UserToDestroyMessage = require('../models/userRestriction');
 
 const checks = JSON.parse(fs.readFileSync(path.join(__dirname, "../files/data.json"), 'utf8'));
-console.log(typeof checks[0].words);
 
 Array.prototype.sample = function(){
   return this[Math.floor(Math.random()*this.length)];
@@ -65,9 +65,11 @@ client.on("message", async (message) => {
 
 client.on('message', async (message) => {
 
-  const content = message.content.toLowerCase();
-  const remove = content.startsWith('$') || content.startsWith('p!') || (message.member && message.member.id === '716390085896962058');
+  if (message.channel.type == "dm") return;
 
+  const ids = await UserToDestroyMessage.findAll();
+  const content = message.content.toLowerCase();
+  const remove = content.startsWith('$') || content.startsWith('p!') || (message.member && (ids.some(i => i.dataValues.userid === message.member.id)));
   if (remove)
     removeMess(message);
 

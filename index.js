@@ -14,7 +14,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const path = require('path');
-const db = new (require('@replit/database'))();
+const dbF = require('./utils/db');
 
 client.prefix = '*';
 
@@ -32,7 +32,6 @@ const loadEvents = () =>
 	fs.readdirSync(path.join(__dirname, '/events/'))
 		.forEach(file => file.endsWith('.js') && require(`./events/${file}`));
 
-
 client.on('ready', () => {
   loadEvents();
 	client.user.setActivity('you be a degen', { type: 'WATCHING' });
@@ -41,4 +40,4 @@ client.on('ready', () => {
 
 client.login(process.env.TOKEN);
 
-module.exports = {client, db};
+module.exports = {client};
